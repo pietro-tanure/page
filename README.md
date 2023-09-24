@@ -17,11 +17,9 @@ This application requires Node.js v16.13+.
 git clone https://github.com/leerob/leerob.io.git
 cd leerob.io
 pnpm install
-
-sudo npm install -g n
+sudo npm install -g n #pietro
 sudo n latest
-sudo npm install -g npm@latest
-
+sudo npm install -g npm@latest #pietro
 pnpm run setup # Remove all of my personal information
 pnpm dev
 ```
