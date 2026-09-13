@@ -7,7 +7,6 @@ import {
   Block,
   THEORY,
   OVERVIEW_TRANSFORMATIONS,
-  DIALECTICAL_SHAPE,
   MAPS,
   REVOLUTIONS,
   RevolutionId,
@@ -394,14 +393,6 @@ export default function MeetingClient() {
             <li key={i}>{item.text}</li>
           ))}
         </ol>
-        <h4 className="font-medium text-neutral-900 dark:text-neutral-100 mt-4 mb-2 text-sm">
-          Forma dialética aproximada
-        </h4>
-        <ul className="list-disc pl-5 text-sm text-neutral-700 dark:text-neutral-300 space-y-1.5">
-          {DIALECTICAL_SHAPE.map((item, i) => (
-            <li key={i}>{item.text}</li>
-          ))}
-        </ul>
         <MapToggle />
       </section>
 

@@ -69,18 +69,6 @@ export const OVERVIEW_TRANSFORMATIONS: Bullet[] = [
   },
 ];
 
-export const DIALECTICAL_SHAPE: Bullet[] = [
-  {
-    text: `Base (econômica): 3, 4, 6, 7 — sistemas de trabalho, expansão de recursos/mercados, infraestrutura física da acumulação`,
-  },
-  {
-    text: `Forma político-institucional: 1, 8 — as formas estatais que essa base assume`,
-  },
-  {
-    text: `Superestrutura/resposta ideológica: 5, 9, 10, 11 — novas classes e ideias geradas pela transformação econômica, e que atuam de volta sobre ela`,
-  },
-];
-
 export const MAPS = {
   '1815': {
     src: '/images/europe_1815_congress_of_vienna.png',
