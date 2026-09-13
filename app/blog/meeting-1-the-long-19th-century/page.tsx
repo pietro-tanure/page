@@ -53,15 +53,11 @@ export default function Page() {
       <h1 className="font-bold text-2xl tracking-tighter max-w-[650px]">
         <Balancer>{TITLE}</Balancer>
       </h1>
-      <div className="flex items-center mt-2 mb-2 text-sm max-w-[650px]">
+      <div className="flex items-center mt-2 mb-8 text-sm max-w-[650px]">
         <p className="text-sm text-neutral-600 dark:text-neutral-400">
           {formatDate(PUBLISHED_AT)}
         </p>
       </div>
-      <p className="text-sm italic text-neutral-500 dark:text-neutral-500 mb-8 max-w-[650px]">
-        Nota: prioriza profundidade analítica em vez de tempo estrito — corte por seção para uma
-        apresentação oral de 40 minutos, ou use como leitura.
-      </p>
       <MeetingClient />
     </section>
   );

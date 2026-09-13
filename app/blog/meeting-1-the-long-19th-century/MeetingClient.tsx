@@ -28,6 +28,36 @@ const ERA_COLORS: Record<string, string> = {
   imperio: 'bg-purple-300/80 dark:bg-purple-900/70',
 };
 
+// Lay out timeline events on a true chronological scale, then push any that
+// would overlap apart just enough to keep their year labels legible —
+// dense clusters (e.g. Marx's life) end up slightly stretched relative to
+// sparser periods, while era bands below still reflect the real scale.
+const TIMELINE_PADDING = 28;
+const TIMELINE_MIN_GAP = 34;
+const TIMELINE_NOMINAL_WIDTH = 2400;
+
+function layoutTimeline() {
+  const contentWidth = TIMELINE_NOMINAL_WIDTH - TIMELINE_PADDING * 2;
+  const xForYear = (year: number) =>
+    TIMELINE_PADDING +
+    ((year - TIMELINE_START) / (TIMELINE_END - TIMELINE_START)) * contentWidth;
+
+  const sorted = [...TIMELINE_EVENTS].sort((a, b) => a.year - b.year);
+  let prev = -Infinity;
+  const positioned = sorted.map((event) => {
+    let x = xForYear(event.year);
+    if (x < prev + TIMELINE_MIN_GAP) x = prev + TIMELINE_MIN_GAP;
+    prev = x;
+    return { event, x };
+  });
+
+  const trackWidth = Math.max(TIMELINE_NOMINAL_WIDTH, prev + TIMELINE_PADDING);
+  return { positioned, trackWidth, xForYear };
+}
+
+const { positioned: POSITIONED_EVENTS, trackWidth: TIMELINE_WIDTH, xForYear: eraX } =
+  layoutTimeline();
+
 function Blocks({ blocks }: { blocks: Block[] }) {
   return (
     <div className="space-y-3">
@@ -139,15 +169,9 @@ function Timeline({
   onSelect: (t: TimelineTab) => void;
 }) {
   const [hovered, setHovered] = useState<number | null>(null);
-  const trackWidth = 1500;
-  const padding = 28;
-  const contentWidth = trackWidth - padding * 2;
   const lineTop = 50;
 
-  const xForYear = (year: number) =>
-    padding + ((year - TIMELINE_START) / (TIMELINE_END - TIMELINE_START)) * contentWidth;
-
-  const previewEvent = hovered !== null ? TIMELINE_EVENTS[hovered] : null;
+  const previewEvent = hovered !== null ? POSITIONED_EVENTS[hovered].event : null;
 
   return (
     <div className="my-10">
@@ -158,10 +182,10 @@ function Timeline({
         Passe o mouse ou clique em um marcador para ver o evento e abrir a aba correspondente.
       </p>
       <div className="overflow-x-auto -mx-2 px-2 pb-2">
-        <div className="relative" style={{ width: trackWidth, height: 90 }}>
+        <div className="relative" style={{ width: TIMELINE_WIDTH, height: 90 }}>
           <div
             className="absolute h-1.5 rounded-full bg-neutral-200 dark:bg-neutral-800"
-            style={{ top: lineTop, left: padding, width: contentWidth }}
+            style={{ top: lineTop, left: TIMELINE_PADDING, width: TIMELINE_WIDTH - TIMELINE_PADDING * 2 }}
           />
           {ERAS.map((era) => (
             <div
@@ -169,14 +193,13 @@ function Timeline({
               className={clsx('absolute h-1.5 rounded-full', ERA_COLORS[era.id])}
               style={{
                 top: lineTop,
-                left: xForYear(era.start),
-                width: xForYear(era.end) - xForYear(era.start),
+                left: eraX(era.start),
+                width: eraX(era.end) - eraX(era.start),
               }}
               title={era.label}
             />
           ))}
-          {TIMELINE_EVENTS.map((event, i) => {
-            const x = xForYear(event.year);
+          {POSITIONED_EVENTS.map(({ event, x }, i) => {
             const above = i % 2 === 0;
             const active = event.tab === activeTab;
             const isHovered = hovered === i;
