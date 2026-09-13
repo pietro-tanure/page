@@ -4,21 +4,18 @@ export default function Page() {
   return (
     <section>
       <h1 className="font-bold text-2xl mb-8 tracking-tighter">
-        Critical Theory & Marxism Study Group
+        Grupo de Estudos de Teoria Crítica e Marxismo
       </h1>
       <div className="prose prose-neutral dark:prose-invert">
         <p>
-          We're a reading and discussion group working through critical
-          theory and Marxist thought — from foundational texts to their
-          application to history, politics, and culture. This site collects
-          notes and write-ups from each meeting as the group goes.
+          Somos um grupo de leitura e discussão que estuda a teoria crítica e o pensamento
+          marxista — dos textos fundamentais à sua aplicação à história, à política e à cultura.
+          Este site reúne as notas e os registros de cada encontro à medida que o grupo avança.
         </p>
         <p>
-          Start with{' '}
-          <Link href="/blog/meeting-1-the-long-19th-century">
-            our first meeting
-          </Link>
-          , a dialectical-materialist recap of the "long nineteenth century."
+          Comece pelo{' '}
+          <Link href="/blog/meeting-1-the-long-19th-century">nosso primeiro encontro</Link>, um
+          resumo materialista-dialético do "longo século XIX".
         </p>
       </div>
     </section>

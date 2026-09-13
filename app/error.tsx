@@ -16,7 +16,7 @@ export default function Error({
 
   return (
     <div>
-      <p>Oh no, something went wrong... maybe refresh?</p>
+      <p>Ops, algo deu errado... que tal atualizar a página?</p>
     </div>
   );
 }
