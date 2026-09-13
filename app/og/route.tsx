@@ -21,7 +21,8 @@ export async function GET(req: NextRequest) {
           flexDirection: 'column',
           alignItems: 'flex-start',
           justifyContent: 'center',
-          backgroundImage: 'url(https://leerob.io/og-bg.png)',
+          backgroundColor: '#111010',
+          backgroundImage: 'linear-gradient(135deg, #3b0a0a 0%, #111010 55%)',
         }}
       >
         <div

@@ -1,39 +1,21 @@
 import './global.css';
-import clsx from 'clsx';
 import type { Metadata } from 'next';
-import localFont from 'next/font/local';
 import Sidebar from './components/sidebar';
 import { Analytics } from '@vercel/analytics/react';
-
-const graphik = localFont({
-  src: [
-    {
-      path: '../public/fonts/Graphik-Regular.ttf',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: '../public/fonts/Graphik-Medium.ttf',
-      weight: '600',
-      style: 'bold',
-    },
-  ],
-  variable: '--font-graphik',
-  display: 'swap',
-});
+import { siteConfig } from 'lib/site-config';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://leerob.io'),
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: 'Lee Robinson',
-    template: '%s | Lee Robinson',
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
   },
-  description: 'Developer, writer, and creator.',
+  description: siteConfig.description,
   openGraph: {
-    title: 'Lee Robinson',
-    description: 'Developer, writer, and creator.',
-    url: 'https://leerob.io',
-    siteName: 'Lee Robinson',
+    title: siteConfig.name,
+    description: siteConfig.description,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
     locale: 'en_US',
     type: 'website',
   },
@@ -49,12 +31,8 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: 'Lee Robinson',
+    title: siteConfig.name,
     card: 'summary_large_image',
-  },
-  verification: {
-    google: 'eZSdmzAXlLkKhNJzfgwDqWORghxnJ8qR9_CHdAh5-xw',
-    yandex: '14d2e73487fa6c71',
   },
 };
 
@@ -66,10 +44,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={clsx(
-        'text-black bg-white dark:text-white dark:bg-[#111010]',
-        graphik.variable
-      )}
+      className="text-black bg-white dark:text-white dark:bg-[#111010]"
     >
       <body className="antialiased max-w-2xl mb-40 flex flex-col md:flex-row mx-4 mt-8 lg:mx-auto">
         <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">

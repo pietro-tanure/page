@@ -4,20 +4,14 @@ import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 
+const siteUrl = 'https://critical-theory-study-group.vercel.app';
+const siteName = 'Critical Theory & Marxism Study Group';
+
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {
   slug: {
     type: 'string',
     resolve: (doc) => doc._raw.flattenedPath,
-  },
-  tweetIds: {
-    type: 'array',
-    resolve: (doc) => {
-      const tweetMatches = doc.body.raw.match(
-        /<StaticTweet\sid="[0-9]+"\s\/>/g
-      );
-      return tweetMatches?.map((tweet) => tweet.match(/[0-9]+/g)[0]) || [];
-    },
   },
   structuredData: {
     type: 'object',
@@ -29,12 +23,12 @@ const computedFields = {
       dateModified: doc.publishedAt,
       description: doc.summary,
       image: doc.image
-        ? `https://leerob.io${doc.image}`
-        : `https://leerob.io/og?title=${doc.title}`,
-      url: `https://leerob.io/blog/${doc._raw.flattenedPath}`,
+        ? `${siteUrl}${doc.image}`
+        : `${siteUrl}/og?title=${doc.title}`,
+      url: `${siteUrl}/blog/${doc._raw.flattenedPath}`,
       author: {
-        '@type': 'Person',
-        name: 'Lee Robinson',
+        '@type': 'Organization',
+        name: siteName,
       },
     }),
   },

@@ -3,9 +3,7 @@ import { notFound } from 'next/navigation';
 import { Mdx } from 'app/components/mdx';
 import { allBlogs } from 'contentlayer/generated';
 import Balancer from 'react-wrap-balancer';
-import ViewCounter from '../view-counter';
-import { getViewsCount } from 'lib/metrics';
-import { Suspense } from 'react';
+import { siteConfig } from 'lib/site-config';
 
 export async function generateMetadata({
   params,
@@ -23,8 +21,8 @@ export async function generateMetadata({
     slug,
   } = post;
   const ogImage = image
-    ? `https://leerob.io${image}`
-    : `https://leerob.io/og?title=${title}`;
+    ? `${siteConfig.url}${image}`
+    : `${siteConfig.url}/og?title=${title}`;
 
   return {
     title,
@@ -34,7 +32,7 @@ export async function generateMetadata({
       description,
       type: 'article',
       publishedTime,
-      url: `https://leerob.io/blog/${slug}`,
+      url: `${siteConfig.url}/blog/${slug}`,
       images: [
         {
           url: ogImage,
@@ -79,7 +77,7 @@ function formatDate(date: string) {
   return `${fullDate} (${formattedDate})`;
 }
 
-export default async function Blog({ params }) {
+export default function Blog({ params }) {
   const post = allBlogs.find((post) => post.slug === params.slug);
 
   if (!post) {
@@ -98,26 +96,12 @@ export default async function Blog({ params }) {
       <h1 className="font-bold text-2xl tracking-tighter max-w-[650px]">
         <Balancer>{post.title}</Balancer>
       </h1>
-      <div className="flex justify-between items-center mt-2 mb-8 text-sm max-w-[650px]">
+      <div className="flex items-center mt-2 mb-8 text-sm max-w-[650px]">
         <p className="text-sm text-neutral-600 dark:text-neutral-400">
           {formatDate(post.publishedAt)}
         </p>
-        {/* I also want an error boundary here */}
-        <Suspense>
-          <Views slug={post.slug} />
-        </Suspense>
       </div>
       <Mdx code={post.body.code} />
     </section>
   );
-}
-
-async function Views({ slug }: { slug: string }) {
-  let views;
-  try {
-    views = await getViewsCount();
-  } catch (error) {
-    console.error(error);
-  }
-  return <ViewCounter allViews={views} slug={slug} trackView />;
 }

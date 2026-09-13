@@ -1,31 +1,39 @@
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fleerob%2Fleerob.io)
+# Critical Theory & Marxism Study Group
 
-# leerob.io
+Reading notes and write-ups from an ongoing study group on critical theory
+and Marxism, published as a static site.
 
-- **Framework**: [Next.js](https://nextjs.org/)
-- **Database**: [PlanetScale](https://planetscale.com)
-- **Authentication**: [NextAuth.js](https://next-auth.js.org)
-- **Deployment**: [Vercel](https://vercel.com)
+- **Framework**: [Next.js](https://nextjs.org/) (App Router)
+- **Content**: [Contentlayer](https://www.contentlayer.dev/), reading `.mdx`
+  files from `content/` as `Blog` documents
 - **Styling**: [Tailwind CSS](https://tailwindcss.com)
+- **Deployment**: [Vercel](https://vercel.com)
 - **Analytics**: [Vercel Analytics](https://vercel.com/analytics)
 
-## Running Locally
+## Running locally
 
 This application requires Node.js v16.13+.
 
 ```bash
-git clone https://github.com/leerob/leerob.io.git
-cd leerob.io
 pnpm install
-sudo npm install -g n #pietro
-sudo n latest
-sudo npm install -g npm@latest #pietro
-pnpm run setup # Remove all of my personal information
 pnpm dev
 ```
 
-Create a `.env` file similar to [`.env.example`](https://github.com/leerob/leerob.io/blob/main/.env.example).
+## Adding a new meeting write-up
 
-## Cloning / Forking
+Add a new `.mdx` file to `content/`, e.g. `content/meeting-2-....mdx`, with
+frontmatter matching the schema in `contentlayer.config.js`:
 
-Please review the [license](https://github.com/leerob/leerob.io/blob/main/LICENSE.txt) and remove all of my personal information (resume, blog posts, images, etc.) by running `pnpm run setup`.
+```mdx
+---
+title: 'Meeting 2: ...'
+publishedAt: '2026-01-01'
+summary: 'One-sentence summary shown in the meeting list.'
+---
+
+Your content here.
+```
+
+It will automatically appear at `/blog/<filename>` and in the meetings list
+at `/blog`. Images referenced from a post with an absolute path (e.g.
+`/images/foo.png`) should live under `public/images/`.
