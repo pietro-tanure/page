@@ -4,7 +4,7 @@ import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 
-const siteUrl = 'https://critical-theory-study-group.vercel.app';
+const siteUrl = 'https://auramarxista.vercel.app';
 const siteName = 'Grupo de Estudos de Teoria Crítica e Marxismo';
 
 /** @type {import('contentlayer/source-files').ComputedFields} */

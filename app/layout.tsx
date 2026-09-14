@@ -1,7 +1,7 @@
 import './global.css';
 import type { Metadata } from 'next';
 import Sidebar from './components/sidebar';
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from '@vercel/analytics/next';
 import { siteConfig } from 'lib/site-config';
 
 export const metadata: Metadata = {
