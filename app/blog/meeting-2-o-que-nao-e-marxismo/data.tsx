@@ -11,8 +11,8 @@ export const MISCONCEPTIONS: Misconception[] = [
     explanation: (
       <>
         Essa é uma falsa dicotomia: a consciência é um fenômeno material. A mente humana muda o
-        mundo e o mundo muda a mente humana. A mente não é autônoma: há autonomia ou liberdade
-        absoluta? Somos limitados pelo exterior:{' '}
+        mundo e o mundo muda a mente humana. Porém não há autonomia completa ou liberdade
+        absoluta, somos limitados pelo exterior:{' '}
         <em>
           "Os homens fazem sua própria história, mas não a fazem como querem; não a fazem sob
           circunstâncias de sua escolha, e sim sob aquelas com que se defrontam diretamente,
@@ -133,6 +133,62 @@ export const MISCONCEPTIONS: Misconception[] = [
         fazerem o mal umas com as outras, isso vai existir para sempre, mas de tirar a opressão das
         bases econômicas da sociedade, na medida em que tira a propriedade privada, socializa os
         meios de produção e extingue as classes sociais.
+      </>
+    ),
+  },
+  {
+    quote: '"Ditadura do proletariado é uma ditadura igual a qualquer outra, a tirania de um partido ou de uma pessoa"',
+    explanation: (
+      <>
+        O termo é técnico e não tem relação com o sentido comum de "ditadura" como golpe militar
+        ou culto à personalidade. Para Marx, todo Estado é a "ditadura" de alguma classe sobre
+        outra, inclusive as democracias liberais são, nesse sentido, a ditadura da burguesia, mesmo
+        com eleições livres, porque o poder econômico do capital molda quem se elege e o que é
+        politicamente possível. "Ditadura do proletariado" é o nome dado ao período de transição,
+        para o comunismo, também chamado de socialismo, em que é a classe trabalhadora, como um
+        todo, através de seus orgãos de decisão nos locais de trabalho e bairros, detém o poder
+        político, em vez da burguesia, não implica nada sobre partido único, ausência de eleições
+        internas ou culto a um líder.
+      </>
+    ),
+  },
+  {
+    quote: '"O marxismo é anti-religião"',
+    explanation: (
+      <>
+        A citação real de Marx é: "A religião é o suspiro da criatura oprimida, o coração de um
+        mundo sem coração e o espírito de uma situação sem espírito. Ela é o ópio do povo". Ou
+        seja, para ele a religião não é a causa do sofrimento, é um sintoma dele, um consolo real
+        para uma dor real, produzida pela exploração e pela alienação. Por isso, a conclusão de
+        Marx não é "combata a religião", mas "combata as condições materiais que geram a
+        necessidade dela".
+      </>
+    ),
+  },
+  {
+    quote: '"A luta de classes é sobre ódio ou inveja dos pobres contra os ricos"',
+    explanation: (
+      <>
+        Isso psicologiza como sentimento pessoal algo que, para Marx, é uma relação estrutural e
+        objetiva, independente de como cada indivíduo se sente a respeito. Um patrão gentil e um
+        funcionário grato ainda ocupam posições de classe objetivamente antagônicas, um vive da
+        exploração do trabalho alheio, o outro vende sua força de trabalho para sobreviver, e essa
+        relação estrutural não desaparece porque as duas pessoas se dão bem ou não sentem raiva uma
+        da outra. O conceito descreve uma relação de posições dentro da produção, não um estado
+        emocional.
+      </>
+    ),
+  },
+  {
+    quote: '"Proletariado é só o operário industrial de fábrica, de macacão e capacete"',
+    explanation: (
+      <>
+        A definição de Marx não é sobre o tipo de trabalho ou o setor da economia, é sobre a
+        relação com os meios de produção: proletário é quem não possui meios de produção próprios
+        e, por isso, precisa vender sua força de trabalho por um salário para sobreviver. O
+        proletariado industrial tem sim um papel mais central que os demais pois ele produz as
+        mercadorias e o valor que será apropriado pelos demais setores da sociedade: bancário,
+        serviços, governamental, etc, mas proletariado não se limita à ele.
       </>
     ),
   },
