@@ -11,10 +11,13 @@ export const MISCONCEPTIONS: Misconception[] = [
     explanation: (
       <>
         Essa é uma falsa dicotomia: a consciência é um fenômeno material. A mente humana muda o
-        mundo e o mundo muda a mente humana. Porém, não há autonomia ou liberdade absoluta, somos
-        limitados pelo exterior: "Os homens fazem sua própria história, mas não a fazem como
-        querem; não a fazem sob circunstâncias de sua escolha, e sim sob aquelas com que se
-        defrontam diretamente, legadas e transmitidas pelo passado."
+        mundo e o mundo muda a mente humana. A mente não é autônoma: há autonomia ou liberdade
+        absoluta? Somos limitados pelo exterior:{' '}
+        <em>
+          "Os homens fazem sua própria história, mas não a fazem como querem; não a fazem sob
+          circunstâncias de sua escolha, e sim sob aquelas com que se defrontam diretamente,
+          legadas e transmitidas pelo passado." — Karl Marx
+        </em>
       </>
     ),
   },
@@ -45,11 +48,12 @@ export const MISCONCEPTIONS: Misconception[] = [
         Não existem leis gerais da história, a história poderia ser diferente do que foi, e essa
         ordem de modos de produção aconteceu na Europa, mas não aconteceu igual em outras regiões.
         Existem tendências, que podem ser quebradas a todo o momento, como a tendência à evolução
-        da técnica e do conhecimento, ou seja, das forças produtivas, devido ao fato de que o
-        homem é um ser histórico que, diferente de um joão-de-barro, por exemplo, que constrói a
-        mesma casa em todas as gerações, é capaz de construir algo novo aprendendo com o passado.
-        Mas perdas de conhecimento e regressões produtivas já aconteceram em diversos momentos da
-        história, como a queda de Roma, a queima da Biblioteca de Alexandria, etc., etc.
+        da técnica e do conhecimento (ou seja, das forças produtivas) devido ao fato de que o
+        homem é um ser histórico, diferente de um joão-de-barro, por exemplo, que constrói a mesma
+        casa em todas as gerações, o homem é capaz de construir algo novo aprendendo com o
+        passado. Mas perdas de conhecimento e regressões produtivas já aconteceram em diversos
+        momentos da história, como a queda de Roma, a queima da Biblioteca de Alexandria, etc.,
+        etc.
       </>
     ),
   },
