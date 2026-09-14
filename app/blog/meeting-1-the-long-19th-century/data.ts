@@ -14,22 +14,36 @@ export const THEORY: Block[] = [
     type: 'bullets',
     items: [
       {
-        text: `Materialismo histórico: a base (modo de produção, relações de classe) molda a superestrutura (política, cultura)`,
+        text: `Materialismo histórico: só se conhece o objeto apenas através do estudo concreto do objeto`,
       },
       {
-        text: `A história é movida pela contradição: forças produtivas vs. relações de produção (Marx & Engels, 1848; Marx, 1867)`,
-      },
-      {
-        text: `Periodização: o "longo século XIX" de Hobsbawm (1789–1914), não um corte rígido de 1800–1900`,
+        text: `Dialética: a realidade é uma totalidade única em constante movimento`,
         sub: [
-          `Era das Revoluções: 1789–1848`,
-          `Era do Capital: 1848–1875`,
-          `Era dos Impérios: 1875–1914`,
-          `(Hobsbawm, 1962; 1975; 1987)`,
+          `No processo de mudança de A → B o objeto não é nem A e nem B e ao mesmo tempo é A e B. Ex: Uma pessoa vai de jovem à velho de forma contínua como um espectro. Um jovem é qualitativamente diferente de um velho, mas com 45 anos não é nem jovem nem velho e ao mesmo tempo tem características de ambos jovem e velho.`,
+        ],
+      },
+      {
+        text: `O modo de produção (a base ou estrutura econômica) condiciona — não determina nem causa mecanicamente — o desenvolvimento da vida social, política e intelectual (a "superestrutura")`,
+        sub: [
+          `A relação estrutura↔superestrutura é dialética: unidade contraditória, interação e interpenetração mútua, não uma causalidade mecânica de mão única (Peña, 1958/2015)`,
+          `A superestrutura tem autonomia relativa: pode atrasar-se ou adiantar-se em relação à estrutura econômica — por exemplo, países onde o proletariado está politicamente maduro antes que a estrutura econômica esteja madura para o socialismo, e vice-versa (Trotsky, apud Peña, 1958/2015)`,
+          `Tratar essa fórmula como uma chave que explica automaticamente qualquer fenômeno político ou ideológico é o tipo de dogmatismo que o próprio materialismo histórico deveria evitar (Machado, 2018)`,
+        ],
+      },
+      {
+        text: `Forças produtivas x relações de produção: sua contradição funciona como fio condutor para a investigação concreta, não como uma lei geral que já explica a história por si só.`,
+        sub: [
+          `Cada formação social articula forças produtivas e relações de produção à sua própria maneira — algumas permanecem sem contradições significativas por longos períodos; outras se tornam rapidamente contraditórias (Machado, 2018)`,
+          `Reduzir isso a fórmulas prontas ("é dialético", "é estrutural") sem investigação concreta é o oposto do método de Marx, que dedicou décadas a investigar uma única formação social — o capitalismo — em O Capital, obra que sequer concluiu (Machado, 2018)`,
         ],
       },
       {
         text: `Tese da "dupla revolução": revolução política francesa + revolução industrial britânica = motor do século (Hobsbawm, 1962)`,
+        sub: [
+          `Era das Revoluções: 1789–1848`,
+          `Era do Capital: 1848–1875`,
+          `Era dos Impérios: 1875–1914`,
+        ],
       },
     ],
   },
@@ -969,9 +983,11 @@ export const REFERENCES: string[] = [
   'Hobsbawm, Eric. The Age of Empire: 1875–1914. London: Weidenfeld & Nicolson, 1987.',
   "James, C. L. R. The Black Jacobins: Toussaint L'Ouverture and the San Domingo Revolution. London: Secker and Warburg, 1938.",
   'Lenin, Vladimir I. Imperialism, the Highest Stage of Capitalism. Petrograd, 1917.',
+  'Machado, Gustavo. Marx e a História. 2018.',
   'Marx, Karl. The Eighteenth Brumaire of Louis Bonaparte. 1852.',
   'Marx, Karl. Capital: A Critique of Political Economy, Vol. 1. Hamburg: Otto Meissner, 1867.',
   'Marx, Karl, and Friedrich Engels. The Communist Manifesto. London, 1848.',
+  'Peña, Milcíades. O que é Marxismo. 1958/2015.',
   "Rodney, Walter. How Europe Underdeveloped Africa. London: Bogle-L'Ouverture Publications, 1972.",
   'Wallerstein, Immanuel. The Modern World-System, Vols. 1–3. New York: Academic Press, 1974–1989.',
   'Wood, Ellen Meiksins. The Origin of Capitalism: A Longer View. London: Verso, 2002.',
