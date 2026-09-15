@@ -14,7 +14,7 @@ export const THEORY: Block[] = [
     type: 'bullets',
     items: [
       {
-        text: `Materialismo histórico: só se conhece o objeto apenas através do estudo concreto do objeto`,
+        text: `Materialismo: só se conhece o objeto através do estudo concreto do objeto`,
       },
       {
         text: `Dialética: a realidade é uma totalidade única em constante movimento`,
