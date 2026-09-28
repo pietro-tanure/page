@@ -7,21 +7,6 @@ export type Misconception = {
 
 export const MISCONCEPTIONS: Misconception[] = [
   {
-    quote: '"A materialidade determina a consciência"',
-    explanation: (
-      <>
-        Essa é uma falsa dicotomia: a consciência é um fenômeno material. A mente humana muda o
-        mundo e o mundo muda a mente humana. Porém não há autonomia completa ou liberdade
-        absoluta, somos limitados pelo exterior:{' '}
-        <em>
-          "Os homens fazem sua própria história, mas não a fazem como querem; não a fazem sob
-          circunstâncias de sua escolha, e sim sob aquelas com que se defrontam diretamente,
-          legadas e transmitidas pelo passado." — Karl Marx
-        </em>
-      </>
-    ),
-  },
-  {
     quote: '"A economia determina todo o resto"',
     explanation: (
       <>
